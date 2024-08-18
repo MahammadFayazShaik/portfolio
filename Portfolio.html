@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Portfolio</title>
+    <style>
+        body {
+    background: linear-gradient(to right, rgba(215, 55, 124, 0.05), rgba(57, 45, 218, 0.05));
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    min-height: 100vh; /* Ensures the body takes up the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+
+    
+}
+
+
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 60px 0;
+            background: transparent;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 60px 0;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+            background: transparent; /* Set to transparent for a seamless look */
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: #444;
+            margin: 0;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: transparent;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            margin-top: -40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        }
+        .profile-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .profile-name {
+            font-size: 4rem;
+            color: #222;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #f24892, #5145f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: background 0.5s ease-in-out;
+        }
+
+        .profile-role {
+            font-size: 1.25rem;
+            color:transparent;
+            margin-bottom: 20px;
+        }
+
+        .profile-buttons {
+            margin-top: 20px;
+            background-color: transparent;
+            margin-left: 110px;
+
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 0.875rem;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            margin: 5px;
+        }
+
+        .button-primary {
+            background: linear-gradient(to right, #f24892, #5145f0);      }
+
+        .button-primary:hover {
+            background: #ae82a0;
+        }
+
+        .button-secondary {
+            background: rgb(111, 64, 221);
+            color: #222;
+        }
+
+        .button-secondary:hover {
+            background:transparent;
+           
+        }
+
+        .about, .work {
+            text-align: center;
+            background: transparent;
+        }
+
+        .about-content, .work-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content p, .work-content p {
+            font-size: 1.125rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+            color: #444;
+            margin: 0;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 20px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.75rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .project-description {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .p-6 {
+            padding: 1.5rem;
+        }
+
+        .pt-0 {
+            padding-top: 0;
+        }
+
+        .inline-flex {
+            display: inline-flex;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .rounded-md {
+            border-radius: 0.375rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .ring-offset-background {
+            --ring-offset-width: 0;
+            --ring-offset-color: #fff;
+        }
+
+        .transition-colors {
+            transition: color 0.3s ease;
+        }
+
+        .focus-visible\:outline-none:focus-visible {
+            outline: 0;
+        }
+
+        .focus-visible\:ring-2:focus-visible {
+            box-shadow: 0 0 0 2px var(--ring-color);
+        }
+
+        .focus-visible\:ring-ring:focus-visible {
+            --ring-color: #007bff;
+        }
+
+        .focus-visible\:ring-offset-2:focus-visible {
+            --ring-offset-width: 2px;
+        }
+
+        .bg-primary {
+            background-color: #007bff;
+        }
+
+        .bg-primary/90 {
+            background-color: rgba(0, 123, 255, 0.9);
+        }
+
+        .text-primary-foreground {
+            color: #fff;
+        }
+
+        .hover\:bg-primary\/90:hover {
+            background-color: rgba(0, 123, 255, 0.9);
+        }
+
+        .h-9 {
+            height: 2.25rem;
+        }
+
+        .px-3 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+        }
+
+        .bg-secondary {
+            background-color:transparent;
+                    
+        }
+
+        .bg-secondary/80 {
+            background-color: rgba(108, 117, 125, 0.8);
+        }
+
+        .text-secondary-foreground {
+            color: #0b0a0a;
+        }
+
+        .hover\:bg-secondary\/80:hover {
+            background-color: rgba(242, 85, 171, 0.8);
+        }
+
+        .h-[0.85rem] {
+            height: 0.85rem;
+        }
+
+        .w-[0.85rem] {
+            width: 0.85rem;
+        }
+
+        .mr-1 {
+            margin-right: 0.25rem;
+        }
+        
+        #contact {
+    position: relative;
+    padding-top: 4rem; /* py-16 */
+    padding-bottom: 4rem; /* py-16 */
+}
+
+#contact .flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 560px) {
+    #contact .flex {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+#contact h2 {
+    font-size: 3rem; /* text-5xl */
+    font-weight: 800; /* font-extrabold */
+    letter-spacing: -0.025em; /* tracking-tight */
+}
+
+#contact .text-lg {
+    font-size: 1.125rem; /* lg:text-xl */
+    color: var(--muted-foreground); /* text-muted-foreground */
+}
+
+#contact a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.125rem; /* underline-offset-4 */
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: var(--foreground); /* hover:text-foreground */
+}
+
+#contact .flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+#contact .rounded-lg {
+    border-radius: 0.5rem; /* rounded-lg */
+    border: 1px solid var(--border); /* border */
+    background-color: var(--card); /* bg-card */
+    color: var(--card-foreground); /* text-card-foreground */
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1); /* shadow-sm */
+    padding-top: 1.5rem; /* pt-6 */
+}
+
+#contact .p-6 {
+    padding: 1.5rem; /* p-6 */
+}
+
+#contact .grid-cols-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; /* gap-4 */
+}
+
+#contact button, #contact a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    ring-offset: var(--ring-offset-background); /* ring-offset-background */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--secondary-foreground); /* text-secondary-foreground */
+    background-color: var(--secondary); /* bg-secondary */
+    height: 2.5rem; /* h-10 */
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+}
+
+#contact button:hover, #contact a:hover {
+    background-color: rgba(var(--secondary), 0.8); /* hover:bg-secondary/80 */
+}
+
+#contact .absolute {
+    position: absolute;
+    inset: 0;
+    z-index: -10;
+    top: -5rem; /* -top-20 */
+    overflow: hidden;
+    filter: blur(3rem); /* blur-3xl */
+}
+
+@media (min-width: 640px) {
+    #contact .absolute {
+        top: -20rem; /* sm:-top-80 */
+    }
+}
+
+#contact .absolute .relative {
+    position: relative;
+    left: calc(50% - 11rem);
+    width: 36.125rem; /* w-[36.125rem] */
+    transform: translateX(-50%) rotate(30deg); /* -translate-x-1/2 rotate-[30deg] */
+    background: linear-gradient(to top right, #ff80b5, #9089fc); /* bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] */
+    opacity: 0.1; /* opacity-10 */
+    clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);
+}
+.lucide-mail {
+        opacity: 1; /* Adjust the transparency level */
+        background-color: transparent;
+    }
+
+    .skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-item {
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-logo {
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-item:hover .skill-logo {
+    transform: translateY(-10px);
+}
+
+.skill-item:hover .skill-name {
+    transform: translateY(-20px);
+    opacity: 1;
+}
+
+.skill-name {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container" >
+        <!-- Profile Section -->
+        <div class="profile-buttons ">
+            <a href="https://drive.google.com/file/d/1nV0eUR7GFZf6i4OAKHfUl35FpNGRPeRB/view?usp=sharing" class="button button-primary" target="_blank">View Resume</a>
+            <a href="mailto:mailtofayazshaik@gmail.com" style="margin-left: 625px"  aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:Rcoraba:" data-state="closed" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2" aria-label="open-popover">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+            </a>
+            <a aria-label="github" href="https://github.com/MahammadFayazShaik" style="margin-left: 5px"target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+            </a>
+            <a aria-label="linkedin" href="https://www.linkedin.com/in/mahammad-fayaz-shaik-985773229/" style="margin-left: 5px" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            
+
+        
+        </div>
+        
+            <div class="profile">
+                <div class="group-relative">
+                <h1 class="scroll-m-20 text-7xl sm:text-8xl text-center font-extrabold tracking-tight lg:text-9xl leading-none mb-28">
+                    <span class=" profile-name whitespace-nowrap duration-500 ease-in-out transition bg-gradient-to-r from-[#ff80b5] to-[#9089fc] bg-clip-text text-transparent">Mahammad Fayaz</span>
+                   
+                </h1>
+                <img src="C:\Users\lenovo\Desktop\Work\image.jfif" alt="Profile Picture" class="profile-img">
+               
+              
+                
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div id="about" class="section about">
+            <div class="section-heading">
+                <h2  class="profile-name">About Me</h2>
+            </div>
+            <div class="about-content" >
+                <p style="color : linear-gradient(to right, #f24892, #5145f0);">
+                    Welcome to my blog! I'm a passionate developer with a 
+                    deep love for crafting elegant and efficient solutions. 
+                    With expertise in ReactJS, CSS, HTML, Python, Core Java,
+                     MySQL, MongoDB, Jenkins, Docker, and Kubernetes,
+                      I thrive on turning complex ideas into reality. 
+                      My journey as a developer is fueled by continuous learning 
+                      and a drive to innovate. Here, I share insights, tips, and projects
+                       that reflect my dedication to the art of coding and my 
+                    commitment to building a better digital world.
+                </p>
+            </div>
+        </div>
+
+        <!--SKILLS-->
+        <div class="section-heading">
+            <h2 class="profile-name">Skills</h2>
+        </div>
+        <div class="skills-section">
+            <div class="skill-item">
+                <img width="80" height="80" class="skill-logo" src="https://img.icons8.com/dotty/80/react.png" alt="react"/>
+                <p class="skill-name">ReactJS</p>
+            </div>
+            <div class="skill-item">
+                <img width="100" height="100" class="skill-logo" src="https://img.icons8.com/plasticine/100/css3.png" alt="css3"/>
+                <p class="skill-name">CSS</p>
+            </div>
+            <div class="skill-item">
+                <img width="100" height="100" class="skill-logo" src="https://img.icons8.com/color/48/html-5--v1.png" alt="html-5--v1"/>
+                <p class="skill-name">HTML</p>
+            </div>
+            <div class="skill-item">
+                <img width="100" height="100" class="skill-logo" src="https://img.icons8.com/color/48/python--v1.png" alt="python--v1"/>
+                <p class="skill-name">Python</p>
+            </div>
+            <div class="skill-item">
+                <img width="100" height="100" class="skill-logo" src="https://img.icons8.com/color/48/java-coffee-cup-logo--v1.png" alt="java-coffee-cup-logo--v1"/>
+                <p class="skill-name">Core Java</p>
+            </div>
+            <div class="skill-item">
+                <img width="100" height="100" class="skill-logo" src="https://img.icons8.com/color/48/mysql-logo.png" alt="mysql-logo"/>
+                <p class="skill-name">MySQL</p>
+            </div>
+            <div class="skill-item">
+                <img width="70" height="70" class="skill-logo" src="https://img.icons8.com/color/96/mongo-db.png" alt="mongo-db"/>
+                <p class="skill-name">MongoDB</p>
+            </div>
+            <div class="skill-item">
+                <img width="100" height="100" class="skill-logo" src="https://img.icons8.com/color/100/jenkins.png" alt="jenkins"/>
+                <p class="skill-name">Jenkins</p>
+            </div>
+            <div class="skill-item">
+                <img width="100" height="100" class="skill-logo" src="https://img.icons8.com/color/48/docker.png" alt="docker"/>
+                <p class="skill-name">Docker</p>
+            </div>
+            <div class="skill-item">
+                <img width="100" height="100" class="skill-logo" src="https://img.icons8.com/color/48/kubernetes.png" alt="kubernetes"/>
+                <p class="skill-name">Kubernetes</p>
+            </div>
+            <div class="skill-item">
+                <img width="100" height="100" class="skill-logo" src="https://img.icons8.com/fluency/100/c-programming.png" alt="c-programming"/>
+                <p class="skill-name">C Programming</p>
+            </div>
+            <div class="skill-item">
+                <img width="100" height="100" class="skill-logo" src="https://img.icons8.com/ios-filled/100/git.png" alt="git"/>
+                <p class="skill-name">Git</p>
+            </div>
+            <div class="skill-item">
+                <img width="100" height="100" class="skill-logo" src="https://img.icons8.com/color/48/nodejs.png" alt="nodejs"alt="nodejs"/>
+                <p class="skill-name">NodeJs</p>
+            </div>
+        </div>
+        
+        
+
+        <!-- Work Section -->
+        
+            <div class="container">
+                <div id="work" class="section work">
+               
+                        <h2  class="profile-name">Work</h2>
+                    </div>
+        
+                    <div class="project-card">
+                        <h2>Web Devloper</h2>
+                        
+                        <h5 class="project-title" style="font-size: 20px;">SATTAFIX</h5>
+                       
+                        <div class="project-content">
+                            <p class="project-description">
+                                I recently developed Sattafix.online, 
+                                a web platform designed to showcase the results of 
+                                online games. Leveraging my skills in ReactJS, JavaScript, MongoDB, and CSS, 
+                                I built this site to provide users with a seamless and interactive experience.
+                                 My focus was on creating a responsive and intuitive interface that efficiently
+                                  handles and displays real-time data.
+                            </p>
+                            <div class="flex items-center p-6 pt-0">
+                                <div class="flex gap-4">
+                                    <a href="https://www.sattafix.online/" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[0.85rem] w-[0.85rem] mr-1">
+                                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                        </svg>Live Site
+                                    </a>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="project-card">
+                        <h2>Python Devloper</h2>
+                        
+                        <h5 class="project-title" style="font-size: 15px;">EXPOSYS DATA LABS</h5>
+                        <div class="project-content">
+                            <p class="project-description">
+                                I recently developed Sattafix.online, 
+                                a web platform designed to showcase the results of 
+                                online games. Leveraging my skills in ReactJS, JavaScript, MongoDB, and CSS, 
+                                I built this site to provide users with a seamless and interactive experience.
+                                 My focus was on creating a responsive and intuitive interface that efficiently
+                                  handles and displays real-time data.
+                            </p>
+                            <div class="flex items-center p-6 pt-0">
+                                <div class="flex gap-4">
+                                  
+                                   <a href="https://drive.google.com/file/d/1HbOs0PjrWVBTpFlUG-n95o7vrTkSyR0u/view?usp=drive_link" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+                                  style="text-decoration: none;"
+                                  target="_blank">
+                                  Certification
+                               </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="container">
+
+            <div id="projects" class="section">
+                <div class="section-heading">
+                    <h2  class="profile-name">Projects</h2>
+                </div>
+    
+                <div class="project-card">
+                  <!--  <img src="/_next/image?url=%2Fassets%2Fimages%2Fprojects%2Fpdfchat.webp&amp;w=1920&amp;q=75" alt="PDF Chat" class="project-image">
+                  -->  <div class="project-content">
+                        <h3 class="project-title">Chat App</h3>
+                        <p class="project-description">A chat application with socket.io support for end-to-end communication.</p>
+                        <div class="flex items-center p-6 pt-0">
+                            <div class="flex gap-4">
+                                <!--<a href="https://pdfchat-itsraviteja.vercel.app/" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[0.85rem] w-[0.85rem] mr-1">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                    </svg>Live Site
+                                </a>-->
+                                <a class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                    ReactJS
+                                 </a>
+                                 <a class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                    NodeJS 
+                                 </a>
+                                 <a class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                    ExpressJS
+                                 </a>
+                                 <a class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                    Socket.IO
+                                 </a>
+                                
+                                <a href="https://github.com/MahammadFayazShaik/CHATAPPJVM" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[0.85rem] w-[0.85rem] mr-1">
+                                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                    </svg>GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="project-card">
+                   <!-- <img src="C:\Users\lenovo\Desktop\Work\download.png" alt="Calculater" class="project-image">
+-->                    <div class="project-content">
+                        <h3 class="project-title">Calculater</h3>
+                        <p class="project-description">A Calculater app made with ReactJS.</p>
+                        <div class="flex items-center p-6 pt-0">
+                            <div class="flex gap-4">
+                                <a href="https://calculater-itsmefayaz.vercel.app/" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[0.85rem] w-[0.85rem] mr-1">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                    </svg>Live Site
+                                </a>
+                                <a href="https://github.com/MahammadFayazShaik/Calculater-App" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[0.85rem] w-[0.85rem] mr-1">
+                                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                    </svg>GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="project-card">
+                    <!-- <img src="C:\Users\lenovo\Desktop\Work\download.png" alt="Calculater" class="project-image">
+ -->                    <div class="project-content">
+                         <h3 class="project-title">Prediction of Heart Diseases using Hybrid Algorithms</h3>
+                         <p class="project-description">
+                            we have devloped a application with the help of Python where we can predict 
+                            that a person is having heart disease with the 6 hybrid machine learning 
+                            algorithms with an accuracy of 89%.
+                         </p>
+                         <div class="flex items-center p-6 pt-0">
+                             <div class="flex gap-4">
+                                 <a class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                    Data Science 
+                                 </a>
+                                 <a class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                    Python
+                                 </a>
+                                 <a class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                    Machine Learing
+                                 </a>
+                                <!-- <a href="https://github.com/MahammadFayazShaik/Calculater-App" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-3" target="_blank">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[0.85rem] w-[0.85rem] mr-1">
+                                         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                                         <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                     </svg>GitHub
+                                 </a>-->
+                             </div>
+                         </div>
+                     </div> 
+                 </div>
+                
+        </div>
+
+
+          <!-- Projects Section -->
+          <div class="container">
+
+            <div id="projects" class="section">
+                <div class="section-heading">
+                    <h2  class="profile-name">Certifications</h2>
+                </div>
+                <div class="project-card">
+                    <!--  <img src="/_next/image?url=%2Fassets%2Fimages%2Fprojects%2Fpdfchat.webp&amp;w=1920&amp;q=75" alt="PDF Chat" class="project-image">
+                    -->  <div class="project-content">
+                          <h3 class="project-title">Technology Virtual Experience Program by Deloitte.</h3>
+                          <p class="project-description">
+                            A practical test conducted by Deloitte which has a practice of coding in Python, Data Analysis and Devlopment.</p>
+                          <div class="flex items-center p-6 pt-0">
+                              <div class="flex gap-4">
+                                  <!--<a href="https://pdfchat-itsraviteja.vercel.app/" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[0.85rem] w-[0.85rem] mr-1">
+                                          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                      </svg>Live Site
+                                  </a>-->
+                                 
+                                  <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Deloitte%20Australia/YPWCiGNTkr6QxcpEu_Deloitte%20Australia_yHHpo6dpYjgGWFErY_1678114363214_completion_certificate.pdf"
+                                  class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+                                  style="text-decoration: none;"
+                                  target="_blank">
+                                  Certification
+                               </a>
+                               
+                                  
+                                  
+                              </div>
+                          </div>
+                      </div>
+                      
+                  </div>
+    
+                <div class="project-card">
+                  <!--  <img src="/_next/image?url=%2Fassets%2Fimages%2Fprojects%2Fpdfchat.webp&amp;w=1920&amp;q=75" alt="PDF Chat" class="project-image">
+                  -->  <div class="project-content">
+                        <h3 class="project-title">IOT and ML</h3>
+                        <p class="project-description">
+                            Gained hands-on experience in Internet of things and some of machine learning algorithms.
+                        </p>
+                        <div class="flex items-center p-6 pt-0">
+                            <div class="flex gap-4">
+                                <!--<a href="https://pdfchat-itsraviteja.vercel.app/" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[0.85rem] w-[0.85rem] mr-1">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                    </svg>Live Site
+                                </a>-->
+                               
+                                 <a href="https://www.classmarker.com/view/results/?type=nrgstr&aid=6332432&gid=1108583&tid=1049041&sid=69080179&ts=1656688188&tk=KWSA&tv=a474f814a285ea160a454775b2745db4" 
+                                 class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+                                  style="text-decoration: none;"
+                                  target="_blank">
+                                  Certification
+                               </a>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    </div> 
+                
+                <div class="project-card">
+                    <!--  <img src="/_next/image?url=%2Fassets%2Fimages%2Fprojects%2Fpdfchat.webp&amp;w=1920&amp;q=75" alt="PDF Chat" class="project-image">
+                    -->  <div class="project-content">
+                          <h3 class="project-title">Python by Udemy</h3>
+                          <p class="project-description">
+                            Completed approximately 22 hours of
+                             coursework focused on core concepts of python.
+                          </p>
+                           <div class="flex items-center p-6 pt-0">
+                            <div class="flex gap-4">
+                                <!--<a href="https://pdfchat-itsraviteja.vercel.app/" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[0.85rem] w-[0.85rem] mr-1">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                    </svg>Live Site
+                                </a>-->
+                               
+                                 <a href="https://www.udemy.com/certificate/UC-cddc83ae-570c-4674-a530-820a5ff361b4/"
+                                 class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+                                  style="text-decoration: none;"
+                                  target="_blank">
+                                  Certification
+                               </a>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                      </div>
+             
+                  <div class="project-card">
+                    <!--  <img src="/_next/image?url=%2Fassets%2Fimages%2Fprojects%2Fpdfchat.webp&amp;w=1920&amp;q=75" alt="PDF Chat" class="project-image">
+                    -->  <div class="project-content">
+                          <h3 class="project-title">Python Test by Kaggle</h3>
+                          <p class="project-description">
+                            Learned basic python topics with hands on experience.
+                          </p>
+                          <div class="flex items-center p-6 pt-0">
+                              <div class="flex gap-4">
+                                  <!--<a href="https://pdfchat-itsraviteja.vercel.app/" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[0.85rem] w-[0.85rem] mr-1">
+                                          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                      </svg>Live Site
+                                  </a>-->
+                                 
+                                   <a href="https://www.kaggle.com/learn/certification/mahammadfayazshaik/python"
+                                   class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+                                   style="text-decoration: none;"
+                                   target="_blank">
+                                   Certification
+                                </a>
+                                                                  
+                              </div>
+                          </div>
+                      </div>
+                      
+                  </div>
+                  <div class="project-card">
+                    <!--  <img src="/_next/image?url=%2Fassets%2Fimages%2Fprojects%2Fpdfchat.webp&amp;w=1920&amp;q=75" alt="PDF Chat" class="project-image">
+                    -->  <div class="project-content">
+                          <h3 class="project-title">PET by Cambridge University. </h3>
+                          <p class="project-description">
+                            A Preliminary English course of 6 months helped in earning Listening, Reading, Speaking and Writing skills.      
+                        </p>
+
+                          <div class="flex items-center p-6 pt-0">
+                              <div class="flex gap-4">
+                                  <!--<a href="https://pdfchat-itsraviteja.vercel.app/" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" target="_blank">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[0.85rem] w-[0.85rem] mr-1">
+                                          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                      </svg>Live Site
+                                  </a>-->
+                                 
+                                   <a href="https://drive.google.com/file/d/11A3k0OpQFEKGzKUhgEPn9DDp7tXHuJoz/view?usp=drive_link"
+                                   class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+                                   style="text-decoration: none;"
+                                   target="_blank">
+                                   Certification
+                                </a>
+                                                  
+                              </div>
+                          </div>
+                      </div>
+                      
+                  </div>
+                
+
+            </div>
+
+
+
+
+
+
+        <!-- Contact Section -->
+        <div id="contact" class="container py-16 relative">
+            <div class="flex flex-col min-[560px]:flex-row items-center justify-between gap-8">
+                <div class="flex flex-col gap-4">
+                    <h2 class="profile-name" style="margin-left: -70px ;">Let's Talk</h2>
+                    <div class="text-lg lg:text-xl text-muted-foreground">
+                        <p>Got a question, proposal, project, or want to work together on something?</p>
+                        <a href="mailto:mailtofayazshaik@gmail.com" class="underline underline-offset-4 hover:text-foreground transition">Send me an email</a>
+                    </div>
+                </div>
+                <div class="flex-shrink-0">
+                    <div class="rounded-lg border bg-card text-card-foreground shadow-sm pt-6">
+                        <div class="p-6 pt-0">
+                            <div class="w-full grid gap-4 grid-cols-3">
+                                <a href="mailto:mailtofayazshaik@gmail.com" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:Rcoraba:" data-state="closed" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2" aria-label="open-popover">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
+                                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                    </svg>
+                                </a>
+                                
+                                <a aria-label="github" href="https://github.com/MahammadFayazShaik" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                                </a>
+                                <a aria-label="linkedin" href="https://www.linkedin.com/in/mahammad-fayaz-shaik-985773229/" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </a>
+                                <a aria-label="x" href="https://x.com/Fayuushaik?t=TwAw9nIidHEX2IjVF4PuHQ&s=09" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                                        <path d="M 11 4 C 7.1456661 4 4 7.1456661 4 11 L 4 39 C 4 42.854334 7.1456661 46 11 46 L 39 46 C 42.854334 46 46 42.854334 46 39 L 46 11 C 46 7.1456661 42.854334 4 39 4 L 11 4 z M 11 6 L 39 6 C 41.773666 6 44 8.2263339 44 11 L 44 39 C 44 41.773666 41.773666 44 39 44 L 11 44 C 8.2263339 44 6 41.773666 6 39 L 6 11 C 6 8.2263339 8.2263339 6 11 6 z M 13.085938 13 L 22.308594 26.103516 L 13 37 L 15.5 37 L 23.4375 27.707031 L 29.976562 37 L 37.914062 37 L 27.789062 22.613281 L 36 13 L 33.5 13 L 26.660156 21.009766 L 21.023438 13 L 13.085938 13 z M 16.914062 15 L 19.978516 15 L 34.085938 35 L 31.021484 35 L 16.914062 15 z"></path>
+                                        </svg>     </a>
+                                
+                                <a aria-label="instagram" href="https://www.instagram.com/mahammadfayaz_?igsh=MXVzNGR0cDMydXM4Mw==" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                                </a>
+                                <a href="https://wa.me/7993091167" target="_blank" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2" aria-label="whatsapp">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        
+        
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Designed and Devloped by <a href="https://github.com/MahammadFayazShaik">Mahammad Fayaz</a> </p>
+        </div>
+</body>
+</html>
