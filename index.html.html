@@ -7,7 +7,7 @@
 
     <title>Portfolio</title>
     <style>
-        body {
+        .body {
     background: linear-gradient(to right, rgba(215, 55, 124, 0.05), rgba(57, 45, 218, 0.05));
     color: #333;
     font-family: Arial, sans-serif;
@@ -77,7 +77,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
-            margin-top: -40px;
+            margin-top: -30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         
         }
@@ -97,6 +97,12 @@
             white-space: nowrap;
             transition: background 0.5s ease-in-out;
         }
+        @media (max-width: 768px) {
+    .profile-name {
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+}
 
         .profile-role {
             font-size: 1.25rem;
@@ -107,9 +113,34 @@
         .profile-buttons {
             margin-top: 20px;
             background-color: transparent;
-            margin-left: 110px;
+            margin-left: 10px;
+            font-size: 5px;
 
         }
+        @media (max-width: 6600px) {
+    .profile-buttons {
+        flex-direction: column;
+   
+        gap: 10px;
+    }
+}
+.mail-git-linkedin{
+    margin-top: -30px;
+            background-color: transparent;
+            align-items: flex-end;
+            justify-content: end;
+            margin-left: 0px;
+            position: absolute;
+            display: block;
+
+        }
+        @media (max-width: 600px) {
+    .mail-git-linkedin {
+        flex-direction: column;
+   
+        gap: 1px;
+    }
+}
 
         .button {
             display: inline-flex;
@@ -117,7 +148,7 @@
             justify-content: center;
             padding: 10px 20px;
             border-radius: 5px;
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: #fff;
             text-decoration: none;
             transition: background 0.3s ease;
@@ -125,26 +156,69 @@
         }
 
         .button-primary {
-            background: linear-gradient(to right, #f24892, #5145f0);      }
+            background: linear-gradient(to right, #f24892, #5145f0);   
+            font-size: 1rem;
+           }
 
         .button-primary:hover {
             background: #ae82a0;
         }
 
-        .button-secondary {
-            background: rgb(111, 64, 221);
-            color: #222;
-        }
+       /* Styling for the container holding the social icons */
+.mail-git-linkedin {
+    position: absolute;
+    top: 20px; /* Adjust the vertical position as needed */
+    right: 200px; /* Adjust the horizontal position as needed */
+    display: flex;
+    gap: 10px; /* Space between the icons */
+}
 
-        .button-secondary:hover {
-            background:transparent;
-           
-        }
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .mail-git-linkedin {
+        top: 15px; /* Adjust vertical position for smaller screens */
+        right: 15px; /* Adjust horizontal position for smaller screens */
+        gap: 8px; /* Reduce space between icons */
+    }
+}
+
+/* Additional styling for individual icons */
+.mail-git-linkedin a {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 30px;
+    justify-content: center;
+    border-radius: 50%; /* Make the icons circular */
+    width: 40px; /* Adjust size */
+    height: 40px; /* Adjust size */
+    background-color: #f3f4f6; /* Light background color */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.mail-git-linkedin a:hover {
+    background-color: #e5e7eb; /* Slightly darker on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Icon size adjustment for smaller screens */
+@media (max-width: 768px) {
+    .mail-git-linkedin a {
+        width: 35px; /* Adjust size for smaller screens */
+        height: 35px; /* Adjust size for smaller screens */
+    }
+}
+
 
         .about, .work {
             text-align: center;
             background: transparent;
         }
+        @media (max-width: 768px) {
+    .about-content {
+        font-size: 2rem;
+        padding: 0 20px;
+    }
+}
 
         .about-content, .work-content {
             max-width: 800px;
@@ -170,162 +244,151 @@
         }
 
         .project-card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            padding: 20px;
-        }
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+}
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
 
-        .project-card img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+.project-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
-        .project-content {
-            padding: 20px;
-        }
+.project-content {
+    padding: 20px;
+}
 
-        .project-title {
-            font-size: 1.75rem;
-            margin-bottom: 10px;
-            color: #222;
-        }
+.project-title {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+    color: #222;
+}
 
-        .project-description {
-            font-size: 1rem;
-            color: #666;
-        }
+.project-description {
+    font-size: 1rem;
+    color: #666;
+}
 
-        .flex {
-            display: flex;
-        }
+.flex {
+    display: flex;
+    flex-wrap: wrap; /* This will allow the items to wrap to the next line if necessary */
+}
 
-        .items-center {
-            align-items: center;
-        }
+.items-center {
+    align-items: center;
+}
 
-        .gap-4 {
-            gap: 1rem;
-        }
+.gap-4 {
+    gap: 1rem;
+}
 
-        .p-6 {
-            padding: 1.5rem;
-        }
+.p-6 {
+    padding: 1.5rem;
+}
 
-        .pt-0 {
-            padding-top: 0;
-        }
+.pt-0 {
+    padding-top: 0;
+}
 
-        .inline-flex {
-            display: inline-flex;
-        }
+.inline-flex {
+    display: inline-flex;
+}
 
-        .justify-center {
-            justify-content: center;
-        }
+.justify-center {
+    justify-content: center;
+}
 
-        .rounded-md {
-            border-radius: 0.375rem;
-        }
+.rounded-md {
+    border-radius: 0.375rem;
+}
 
-        .text-sm {
-            font-size: 0.875rem;
-        }
+.text-sm {
+    font-size: 0.875rem;
+}
 
-        .font-medium {
-            font-weight: 500;
-        }
+.font-medium {
+    font-weight: 500;
+}
 
-        .ring-offset-background {
-            --ring-offset-width: 0;
-            --ring-offset-color: #fff;
-        }
+.ring-offset-background {
+    --ring-offset-width: 0;
+    --ring-offset-color: #fff;
+}
 
-        .transition-colors {
-            transition: color 0.3s ease;
-        }
+.transition-colors {
+    transition: color 0.3s ease;
+}
 
-        .focus-visible\:outline-none:focus-visible {
-            outline: 0;
-        }
+.focus-visible\:outline-none:focus-visible {
+    outline: 0;
+}
 
-        .focus-visible\:ring-2:focus-visible {
-            box-shadow: 0 0 0 2px var(--ring-color);
-        }
+.focus-visible\:ring-2:focus-visible {
+    box-shadow: 0 0 0 2px var(--ring-color);
+}
 
-        .focus-visible\:ring-ring:focus-visible {
-            --ring-color: #007bff;
-        }
+.focus-visible\:ring-ring:focus-visible {
+    --ring-color: #007bff;
+}
 
-        .focus-visible\:ring-offset-2:focus-visible {
-            --ring-offset-width: 2px;
-        }
+.focus-visible\:ring-offset-2:focus-visible {
+    --ring-offset-width: 2px;
+}
 
-        .bg-primary {
-            background-color: #007bff;
-        }
+.bg-primary {
+    background-color: #007bff;
+}
 
-        .bg-primary/90 {
-            background-color: rgba(0, 123, 255, 0.9);
-        }
+.bg-primary/90 {
+    background-color: rgba(0, 123, 255, 0.9);
+}
 
-        .text-primary-foreground {
-            color: #fff;
-        }
+.text-primary-foreground {
+    color: #fff;
+}
 
-        .hover\:bg-primary\/90:hover {
-            background-color: rgba(0, 123, 255, 0.9);
-        }
+.hover\:bg-primary\/90:hover {
+    background-color: rgba(0, 123, 255, 0.9);
+}
 
-        .h-9 {
-            height: 2.25rem;
-        }
+.h-9 {
+    height: 2.25rem;
+}
 
-        .px-3 {
-            padding-left: 0.75rem;
-            padding-right: 0.75rem;
-        }
+.px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
 
-        .bg-secondary {
-            background-color:transparent;
-                    
-        }
-
-        .bg-secondary/80 {
-            background-color: rgba(108, 117, 125, 0.8);
-        }
-
-        .text-secondary-foreground {
-            color: #0b0a0a;
-        }
-
-        .hover\:bg-secondary\/80:hover {
-            background-color: rgba(242, 85, 171, 0.8);
-        }
-
-        .h-[0.85rem] {
-            height: 0.85rem;
-        }
-
-        .w-[0.85rem] {
-            width: 0.85rem;
-        }
-
-        .mr-1 {
-            margin-right: 0.25rem;
-        }
-        
-        #contact {
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .project-card {
+        padding: 15px;
+    }
+    .project-title {
+        font-size: 1.5rem;
+    }
+    .flex {
+        justify-content: center; /* Center the items on smaller screens */
+    }
+    .inline-flex {
+        width: 100%; /* Make the skill tags take full width */
+        justify-content: center; /* Center the skill tags */
+        margin-bottom: 10px; /* Add some spacing between rows */
+    }
+}
+#contact {
     position: relative;
     padding-top: 4rem; /* py-16 */
     padding-bottom: 4rem; /* py-16 */
@@ -334,7 +397,7 @@
 #contact .flex {
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* gap-8 */
+    gap: 1rem; /* gap-8 */
 }
 
 @media (min-width: 560px) {
@@ -359,6 +422,7 @@
     text-decoration: underline;
     text-decoration-thickness: 0.125rem; /* underline-offset-4 */
     transition: color 0.3s ease;
+
 }
 
 #contact a:hover {
@@ -375,7 +439,7 @@
     background-color: var(--card); /* bg-card */
     color: var(--card-foreground); /* text-card-foreground */
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1); /* shadow-sm */
-    padding-top: 1.5rem; /* pt-6 */
+    padding-top: 0.5rem; /* pt-6 */
 }
 
 #contact .p-6 {
@@ -386,6 +450,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem; /* gap-4 */
+    margin-left: 10px;
 }
 
 #contact button, #contact a {
@@ -400,7 +465,8 @@
     color: var(--secondary-foreground); /* text-secondary-foreground */
     background-color: var(--secondary); /* bg-secondary */
     height: 2.5rem; /* h-10 */
-    padding: 0.5rem 1rem; /* px-4 py-2 */
+    padding: 0rem 1rem; /* px-4 py-2 */
+    margin-left: 1px;
 }
 
 #contact button:hover, #contact a:hover {
@@ -436,20 +502,27 @@
         background-color: transparent;
     }
 
-    .skills-section {
+
+.skills-section {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* Center skills */
     gap: 20px;
+    padding: 20px; /* Add padding for better spacing */
 }
 
 .skill-item {
     position: relative;
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    flex: 1 1 100px; /* Flexible sizing */
+    max-width: 120px; /* Max width for each skill */
 }
 
 .skill-logo {
     transition: transform 0.3s ease-in-out;
+    max-width: 100%; /* Ensure logos are responsive */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .skill-item:hover .skill-logo {
@@ -469,6 +542,28 @@
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skill-item {
+        flex: 1 1 45%; /* Two columns on mobile */
+        max-width: 45%; /* Ensure the items take up appropriate space */
+    }
+
+    .skill-name {
+        font-size: 0.9rem; /* Slightly smaller text on mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    .skill-item {
+        flex: 1 1 120px; /* Three or more columns on larger screens */
+        max-width: 120px;
+    }
+
+    .skill-name {
+        font-size: 1rem; /* Maintain text size on larger screens */
+    }
+}
 
 
     </style>
@@ -479,7 +574,10 @@
         <!-- Profile Section -->
         <div class="profile-buttons ">
             <a href="https://drive.google.com/file/d/1nV0eUR7GFZf6i4OAKHfUl35FpNGRPeRB/view?usp=sharing" class="button button-primary" target="_blank">View Resume</a>
-            <a href="mailto:mailtofayazshaik@gmail.com" style="margin-left: 625px"  aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:Rcoraba:" data-state="closed" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2" aria-label="open-popover">
+
+        </div>
+        <div class="mail-git-linkedin">
+            <a href="mailto:mailtofayazshaik@gmail.com" style="margin-left:800px"  aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:Rcoraba:" data-state="closed" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 px-4 py-2" aria-label="open-popover">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
                     <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
@@ -502,7 +600,7 @@
                     <span class=" profile-name whitespace-nowrap duration-500 ease-in-out transition bg-gradient-to-r from-[#ff80b5] to-[#9089fc] bg-clip-text text-transparent">Mahammad Fayaz</span>
                    
                 </h1>
-                <img src="C:\Users\lenovo\Desktop\Work\image.jfif" alt="Profile Picture" class="profile-img">
+                <img src="https://raw.githubusercontent.com/MahammadFayazShaik/portfolio/master/image.jfif" alt="Profile Picture" class="profile-img">
                
               
                 
@@ -914,6 +1012,10 @@
 
             </div>
 
+    </div>
+    </div>
+
+
 
 
 
@@ -964,13 +1066,14 @@
                 </div>
                
             </div>
+        
+        
         </div>
-        
-        
 
         <!-- Footer changed-->
         <div class="footer">
             <p>Designed and Devloped by <a href="https://github.com/MahammadFayazShaik">Mahammad Fayaz</a> </p>
         </div>
+
 </body>
 </html>
