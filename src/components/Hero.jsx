@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Mail, Github, Linkedin, Twitter, Instagram, Smartphone, FileText, ArrowRight } from 'lucide-react'
+import heroImage from '../assets/hero.jpg'
 
 const Hero = () => {
   const { scrollY } = useScroll()
@@ -93,7 +94,7 @@ const Hero = () => {
                  
                  <div className="relative w-56 h-72 sm:w-64 sm:h-80 md:w-[22rem] md:h-[30rem] overflow-hidden rounded-[3rem] md:rounded-[5rem] border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.8)] transition-all duration-1000 group-hover:rounded-[2rem] group-hover:scale-[1.02]">
                     <img 
-                      src="https://drive.google.com/uc?export=view&id=1LRrKFXBqYcynLOLdP2rIGmTGHQWUQPh6" 
+                      src={heroImage} 
                       alt="Mahammad Fayaz" 
                       className="w-full h-full object-cover transition-all duration-[4s] ease-out contrast-[1.05]"
                     />
