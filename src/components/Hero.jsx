@@ -1,13 +1,13 @@
 import React from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Mail, Github, Linkedin, Twitter, Instagram, Smartphone, FileText, ArrowRight } from 'lucide-react'
-import heroImage from '../assets/hero.jpg'
+import heroImage from '../assets/hero.jpeg'
 
 const Hero = () => {
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, 500], [0, 150])
   const opacity = useTransform(scrollY, [0, 400], [1, 0])
-  
+
   const resumeLink = "https://drive.google.com/file/d/1oqGgDF-9iaPUnHmlNDyEWe6r1BMKV8YH/view?usp=sharing"
 
   const socials = [
@@ -22,7 +22,7 @@ const Hero = () => {
   return (
     <section className="min-h-[70vh] flex flex-col items-center justify-center relative pt-2 mb-2 overflow-visible">
       {/* UNIFIED HERO FRAME */}
-      <motion.div 
+      <motion.div
         style={{ y, opacity }}
         className="relative z-10 w-full max-w-7xl mx-auto px-6"
       >
@@ -56,7 +56,7 @@ const Hero = () => {
               </motion.p>
 
               {/* ACTION: RESUME BUTTON & STATS */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2, duration: 1.5 }}
@@ -84,39 +84,39 @@ const Hero = () => {
 
             {/* RIGHT SIDE: PHOTO */}
             <motion.div
-               initial={{ opacity: 0, scale: 0.8, x: 50 }}
-               animate={{ opacity: 1, scale: 1, x: 0 }}
-               transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-               className="flex-shrink-0 relative order-1 md:order-2"
+              initial={{ opacity: 0, scale: 0.8, x: 50 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+              className="flex-shrink-0 relative order-1 md:order-2"
             >
               <div className="relative group-photo">
-                 <div className="absolute inset-0 bg-creative/20 blur-[120px] rounded-full opacity-20 animate-pulse duration-[8s]" />
-                 
-                 <div className="relative w-56 h-72 sm:w-64 sm:h-80 md:w-[22rem] md:h-[30rem] overflow-hidden rounded-[3rem] md:rounded-[5rem] border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.8)] transition-all duration-1000 group-hover:rounded-[2rem] group-hover:scale-[1.02]">
-                    <img 
-                      src={heroImage} 
-                      alt="Mahammad Fayaz" 
-                      className="w-full h-full object-cover transition-all duration-[4s] ease-out contrast-[1.05]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
-                 </div>
+                <div className="absolute inset-0 bg-creative/20 blur-[120px] rounded-full opacity-20 animate-pulse duration-[8s]" />
+
+                <div className="relative w-56 h-72 sm:w-64 sm:h-80 md:w-[22rem] md:h-[30rem] overflow-hidden rounded-[3rem] md:rounded-[5rem] border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.8)] transition-all duration-1000 group-hover:rounded-[2rem] group-hover:scale-[1.02]">
+                  <img
+                    src="https://drive.google.com/uc?export=view&id=1LRrKFXBqYcynLOLdP2rIGmTGHQWUQPh6"
+                    alt="Mahammad Fayaz"
+                    className="w-full h-full object-cover transition-all duration-[4s] ease-out contrast-[1.05]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
 
         {/* SOCIALS BAR */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 2 }}
           className="mt-16 flex justify-center md:justify-start gap-12 px-20"
         >
           {socials.map((social, i) => (
-            <motion.a 
+            <motion.a
               key={i}
-              href={social.href} 
-              target="_blank" 
+              href={social.href}
+              target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -10, scale: 1.4, color: "#bef264" }}
               transition={{ type: "spring", stiffness: 400, damping: 12 }}
@@ -128,7 +128,7 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         animate={{ y: [0, 15, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute bottom-16 left-1/2 -translate-x-1/2 text-slate-500 uppercase tracking-[2em] text-[8px] font-black opacity-30"
